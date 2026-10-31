@@ -1,0 +1,28 @@
+public/index.html
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ready-Writer</title><link rel="stylesheet" href="/styles.css"></head>
+<body><main class="shell"><header><h1>READY-WRITER</h1><p>Paste your manuscript. Get a publishing-ready document, formatted and organized.</p></header>
+<form id="builder">
+<section class="card"><h2>1 · MANUSCRIPT</h2>
+<label>Book title<input name="title" placeholder="My Book Title" required></label>
+<label>Author name<input name="author" placeholder="Your Name" required></label>
+<label>Upload your manuscript (.txt or .docx)<input type="file" id="manuscriptFile" accept=".txt,.docx,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="uploadHelp"><small id="uploadHelp" class="upload-help">Choose a .txt or Microsoft Word .docx file. Text and paragraph breaks will be imported into the manuscript editor below.</small><span id="fileName" class="file-name" aria-live="polite">No file selected</span></label>
+<label>Or paste/edit your chapters (start each with “Chapter 1”, “Chapter 2”… or “# Title”)<textarea name="manuscript" id="manuscript" placeholder="Chapter 1: The Beginning&#10;&#10;Your text here..." required></textarea></label>
+<div class="actions"><button type="button" class="secondary" id="sample">Try a sample</button><button type="button" class="secondary" id="clear">Clear</button></div>
+<div class="checks"><label><input type="checkbox" name="autoEdit" checked> Auto-edit (smart quotes, spacing, dashes, duplicate words, line joins)</label><label><input type="checkbox" name="copyrightPage" checked> Add a copyright page</label><label><input type="checkbox" name="toc" checked> Add a contents page</label></div>
+<label>Dedication (optional)<input name="dedication" placeholder="For my family..."></label>
+<label>Back cover blurb (optional)<textarea name="blurb" class="smallarea"></textarea></label>
+<label>About the author (optional)<textarea name="aboutAuthor" class="smallarea"></textarea></label>
+<label>Also by (comma-separated titles, optional)<input name="alsoBy"></label>
+<label>Series and book number (optional)<input name="series" placeholder="e.g. The Lantern Saga, Book 1"></label>
+<label>ISBN (optional)<input name="isbn" placeholder="978-..."></label>
+</section>
+<section class="card"><h2>2 · FORMAT</h2>
+<label>Trim size (print/PDF; ebook reflows on any device)<div class="pills"><label><input type="radio" name="trim" value="5x8"><span>5 × 8 in</span></label><label><input type="radio" name="trim" value="5.5x8.5" checked><span>5.5 × 8.5 in</span></label><label><input type="radio" name="trim" value="6x9"><span>6 × 9 in</span></label><label><input type="radio" name="trim" value="8.5x11"><span>8.5 × 11 in</span></label></div></label>
+<label>Style<div class="pills"><label><input type="radio" name="style" value="text" checked><span>Text only</span></label><label><input type="radio" name="style" value="pictures"><span>With pictures</span></label></div></label>
+<label class="checkline"><input type="checkbox" name="mirror"> Print layout: mirrored margins with a KDP gutter</label>
+<label>Font<div class="pills"><label><input type="radio" name="font" value="Serif" checked><span>Serif</span></label><label><input type="radio" name="font" value="Classic"><span>Classic</span></label><label><input type="radio" name="font" value="Sans"><span>Sans</span></label></div></label>
+<label>Premium cover theme<div class="pills"><label><input type="radio" name="cover" value="Midnight Gold" checked><span>Midnight Gold</span></label><label><input type="radio" name="cover" value="Crimson"><span>Crimson</span></label><label><input type="radio" name="cover" value="Forest"><span>Forest</span></label><label><input type="radio" name="cover" value="Ivory"><span>Ivory</span></label></div></label>
+</section>
+<section class="card"><h2>3 · EXPORT</h2><p class="hint">Choose a file format. DOCX is editable, PDF is for print-interior review, and EPUB is reflowable for Kindle-compatible ebook workflows.</p><div class="pills output"><label><input type="radio" name="output" value="docx" checked><span>Word (.docx)</span></label><label><input type="radio" name="output" value="pdf"><span>Print PDF</span></label><label><input type="radio" name="output" value="epub"><span>EPUB</span></label></div><div id="status" role="status"></div><button class="build" type="submit">Build my document</button></section>
+</form><footer>READY-WRITER · Manuscript production workspace</footer></main><script src="/app.js"></script></body></html>
